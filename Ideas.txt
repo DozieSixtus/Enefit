@@ -1,0 +1,88 @@
+SOLUTION 1
+1. FeatureProcessorClass() --class
+	a. create_new_column_names() --method
+		input: self, df, suffix, columns_no_change
+		output: df with new column names (col==>col+suffix)
+	b. flatten_multi_index_columns() --method
+		input: self, df
+		output: df with no multi index columns
+	c. create_data_features() --method
+		input: self, data
+		output: data with additional date hierarchy
+	d. create_client_features() --method
+		input: self, historical_weather
+		output: historical_weather merged with location county data, aggregated, hours offset
+	e. create_forecast_weather_features() --method
+		input: self, forecast_weather
+		output: forecast_weather merged with location county data, aggregated by mean
+	f. create_electricity_features() --methdo
+		input: self, electricity
+		output: electricity with datetime offset by 1 day
+	g. create_gas_features() --method
+		input: self, gas
+		output: gas with additional mean mwh price column
+	h. __call__() --dunder method
+		input: self, data, client, historical_weather, forecast_weather, electricity, gas
+		output: data merged with client, historical_weather, forecast_weather, electricity, and gas
+
+2. create_revealed_targets_train() --function
+	input: data, N_day_lags
+	output: data with target values from N_day_lags ago
+
+3. create_revealed_targets_test() --function
+	input: data, previous_revealed_targets, N_days_lags
+	output: data with lagged targets by N_days_lags 
+
+MODEL
+XGBRegressor with GPU and early stopping
+
+
+****************************************************************************************
+SOLUTION 2
+FEATURE ENGINEERING
+1. MonthlyKFold() --class
+	a. __init__() --dunder method
+		input: self, n_splits
+	b. split() --method
+		input: self, X, y, groups=None
+		output: yields idx_train (index of dates before (length-n_splits)th row), idx_test (index of date on (length - n_splits)th row)
+	c. get_n_splits() --method
+		input: self, X, y, groups=None
+		output: self.n_splits
+
+2. feature_eng() --function
+	input: df_data, df_client, df_gas, df_electricity, df_forecast, df_historical, df_location, df_target
+	output: data by merging df_data, df_client, df_gas, df_electricity, df_forecast, df_historical, df_location, df_target(lagged 2,3,4,5,6,7,14 days), date hierarchy, sin and cosine of date hierarchy, aggregation by mean of df_forecast for each county and date, df_historical mean aggregation by county and by date, 7 day lag of aggregation by mean of df_forecast for each county and date, 7 day lag of df_historical mean aggregation by county and by date
+
+3. to_pandas() --function
+	input: X, y=None
+	output: df with additional columns after aggregating on target column. (mean, std, ratio aggregation)
+
+4. new_features() --function
+	input: df
+	output: df with additional diff columns with window of [1,2]
+
+MODEL
+LGBMRegressor with different model parameters. A VotingRegressor is used to select 'best' prediction. A model for all data and another model for when customer is producing electricity.
+
+QUESTIONS:
+1. Does forecast data contain test weather forecasts?
+2. Does revealed targets reveal test target?
+3. Can model prediction be used as revealed targets?
+
+Issues:
+1. Rename all datetime columns to have same name.
+2. Change datetime column type and reduce to date hierarchy
+3. Calculate gradient
+4. Use different models to obtain targets when target is consumption/production.
+5. Combine features together to form new features. <is_business>+<product_type>, <is_business>+<county>
+
+IDEAS:
+1. Replace nan values with mean of columns when grouped by time periods.
+2. Get stats on lagged values.
+
+
+INSIGHTS:
+1. Clients installed capacity and eic count doesn't monotonically increase. There sometimes drop in installed capacity and eic count.
+2. Presence of seasonality trends in targets over the year. A plot of target against months show a more prominent seasonality.
+3. 
