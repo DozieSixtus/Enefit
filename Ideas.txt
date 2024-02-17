@@ -65,6 +65,8 @@ FEATURE ENGINEERING
 MODEL
 LGBMRegressor with different model parameters. A VotingRegressor is used to select 'best' prediction. A model for all data and another model for when customer is producing electricity.
 
+************************************************************************************************************************
+
 QUESTIONS:
 1. Does forecast data contain test weather forecasts?
 2. Does revealed targets reveal test target?
