@@ -4,3 +4,4 @@
 # Large csv files
 data/historical_weather.csv
 data/forecast_weather.csv
+data/train.csv
