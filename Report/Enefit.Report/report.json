@@ -1,0 +1,228 @@
+{
+  "config": "{\"version\":\"5.50\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU11\",\"version\":\"5.50\",\"type\":2}},\"activeSectionIndex\":8,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY23SU11",
+            "path": "BaseThemes/CY23SU11.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Target Trend",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"946812030a75a9050880\",\"layouts\":[{\"id\":0,\"position\":{\"x\":37.049866831940236,\"y\":28.81656309150907,\"z\":0,\"width\":1208.923432553309,\"height\":691.5975141962177,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(train.target)\"}],\"Category\":[{\"queryRef\":\"date_table.MonthYear\",\"active\":true}],\"Series\":[{\"queryRef\":\"train.is_consumption\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"date_table\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"target\"}},\"Function\":0},\"Name\":\"Sum(train.target)\",\"NativeReferenceName\":\"Sum of target\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthYear\"},\"Name\":\"date_table.MonthYear\",\"NativeReferenceName\":\"MonthYear\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_consumption\"},\"Name\":\"train.is_consumption\",\"NativeReferenceName\":\"is_consumption\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"target\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"train\"}},\"Property\":\"is_consumption\"}},\"Right\":{\"Literal\":{\"Value\":\"1L\"}}}}}]}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#17AE24'\"}}}}}},\"selector\":{\"data\":[{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"train\"}},\"Property\":\"is_consumption\"}},\"Right\":{\"Literal\":{\"Value\":\"0L\"}}}}}]}}]}}}",
+          "filters": "[]",
+          "height": 691.60,
+          "width": 1208.92,
+          "x": 37.05,
+          "y": 28.82,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Utility price on Business & County",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection027533f83507cee2dd88",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"55b64b30d0d58034bd10\",\"layouts\":[{\"id\":0,\"position\":{\"x\":980.8566307643343,\"y\":0,\"z\":1000,\"width\":299.1433692356656,\"height\":201.7159416405635,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"train.is_consumption\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_consumption\"},\"Name\":\"train.is_consumption\",\"NativeReferenceName\":\"is_consumption\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_consumption\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"0L\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 201.72,
+          "width": 299.14,
+          "x": 980.86,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"dd9ef4c814a430de08a6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"z\":0,\"width\":1185,\"height\":683.3333333333334,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"date_table.MonthYear\",\"active\":true}],\"Y2\":[{\"queryRef\":\"Sum(gas_prices.mean_price)\"},{\"queryRef\":\"Sum(electricity_prices.euros_per_mwh)\"},{\"queryRef\":\"Sum(train.target)\"}],\"Rows\":[{\"queryRef\":\"BusinessDim.is_business\"},{\"queryRef\":\"CountyDim.county\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_table\",\"Type\":0},{\"Name\":\"g\",\"Entity\":\"gas_prices\",\"Type\":0},{\"Name\":\"e\",\"Entity\":\"electricity_prices\",\"Type\":0},{\"Name\":\"b\",\"Entity\":\"BusinessDim\",\"Type\":0},{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0},{\"Name\":\"c1\",\"Entity\":\"CountyDim\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthYear\"},\"Name\":\"date_table.MonthYear\",\"NativeReferenceName\":\"MonthYear\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"mean_price\"}},\"Function\":1},\"Name\":\"Sum(gas_prices.mean_price)\",\"NativeReferenceName\":\"Average of mean_price\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"euros_per_mwh\"}},\"Function\":1},\"Name\":\"Sum(electricity_prices.euros_per_mwh)\",\"NativeReferenceName\":\"Average of euros_per_mwh\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"is_business\"},\"Name\":\"BusinessDim.is_business\",\"NativeReferenceName\":\"is_business\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"target\"}},\"Function\":1},\"Name\":\"Sum(train.target)\",\"NativeReferenceName\":\"Average of target\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"county\"},\"Name\":\"CountyDim.county\",\"NativeReferenceName\":\"county\"}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 683.33,
+          "width": 1185.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Utility Price on Business & Product",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection19edd744e04010370060",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1b540db4209041d14713\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":102.91629675538954,\"z\":0,\"width\":1280.278731637046,\"height\":617.4977805323373,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(electricity_prices.euros_per_mwh)\"},{\"queryRef\":\"Sum(gas_prices.mean_price)\"},{\"queryRef\":\"Sum(train.target)\"}],\"Category\":[{\"queryRef\":\"date_table.Date.Variation.Date Hierarchy.Year\",\"active\":true},{\"queryRef\":\"date_table.Date.Variation.Date Hierarchy.Quarter\",\"active\":true},{\"queryRef\":\"date_table.Date.Variation.Date Hierarchy.Month\",\"active\":true}],\"Rows\":[{\"queryRef\":\"train.is_business\"},{\"queryRef\":\"train.product_type\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"date_table\",\"Type\":0},{\"Name\":\"g\",\"Entity\":\"gas_prices\",\"Type\":0},{\"Name\":\"e\",\"Entity\":\"electricity_prices\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"target\"}},\"Function\":1},\"Name\":\"Sum(train.target)\",\"NativeReferenceName\":\"Average of target\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"date_table.Date.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"Date Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Quarter\"},\"Name\":\"date_table.Date.Variation.Date Hierarchy.Quarter\",\"NativeReferenceName\":\"Date Quarter\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"date_table.Date.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"Date Month\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"mean_price\"}},\"Function\":1},\"Name\":\"Sum(gas_prices.mean_price)\",\"NativeReferenceName\":\"Average of mean_price\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"e\"}},\"Property\":\"euros_per_mwh\"}},\"Function\":1},\"Name\":\"Sum(electricity_prices.euros_per_mwh)\",\"NativeReferenceName\":\"Average of euros_per_mwh\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_business\"},\"Name\":\"train.is_business\",\"NativeReferenceName\":\"is_business\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"product_type\"},\"Name\":\"train.product_type\",\"NativeReferenceName\":\"product_type\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 617.50,
+          "width": 1280.28,
+          "x": 0.00,
+          "y": 102.92,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"f5ab0c57c81471165207\",\"layouts\":[{\"id\":0,\"position\":{\"x\":981.1353624013803,\"y\":0,\"z\":1000,\"width\":299.1433692356656,\"height\":201.7159416405635,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"train.is_consumption\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_consumption\"},\"Name\":\"train.is_consumption\",\"NativeReferenceName\":\"is_consumption\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_consumption\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"1L\"}}]]}}}]}}}}]}}}",
+          "filters": "[]",
+          "height": 201.72,
+          "width": 299.14,
+          "x": 981.14,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter12e022820a047c9aa3e9\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"weather_station_to_county_mapping\"}},\"Property\":\"county\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}]",
+      "height": 720.00,
+      "name": "ReportSection1b09271506cc97aa4d51",
+      "ordinal": 7,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"c30e2f24483a09420c80\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.605521030503024,\"y\":0,\"z\":0,\"width\":1200.690128812878,\"height\":655.9198646543493,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"X\":[{\"queryRef\":\"Sum(weather_station_to_county_mapping.latitude)\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(weather_station_to_county_mapping.longitude)\"}],\"Series\":[{\"queryRef\":\"weather_station_to_county_mapping.county\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"w\",\"Entity\":\"weather_station_to_county_mapping\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"latitude\"},\"Name\":\"Sum(weather_station_to_county_mapping.latitude)\",\"NativeReferenceName\":\"latitude\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"longitude\"},\"Name\":\"Sum(weather_station_to_county_mapping.longitude)\",\"NativeReferenceName\":\"longitude\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"w\"}},\"Property\":\"county\"},\"Name\":\"weather_station_to_county_mapping.county\",\"NativeReferenceName\":\"county\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 655.92,
+          "width": 1200.69,
+          "x": 9.61,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "County Pie Chart",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection455017fd2a2573da0de9",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"7426e7666401d39c47b4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":56.26090889294628,\"y\":91.93855843481465,\"z\":1,\"width\":1224.0178227440997,\"height\":535.1647431280256,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(train.target)\"}],\"Category\":[{\"queryRef\":\"train.county\",\"active\":true}],\"Series\":[{\"queryRef\":\"train.is_consumption\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"target\"}},\"Function\":1},\"Name\":\"Sum(train.target)\",\"NativeReferenceName\":\"Average of target\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"county\"},\"Name\":\"train.county\",\"NativeReferenceName\":\"county\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_consumption\"},\"Name\":\"train.is_consumption\",\"NativeReferenceName\":\"is_consumption\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"target\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[{\"name\":\"Filter268a30ef123228138546\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"train\"}},\"Property\":\"is_consumption\"}},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}]",
+          "height": 535.16,
+          "width": 1224.02,
+          "x": 56.26,
+          "y": 91.94,
+          "z": 1.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 3",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection8821309fb1264543c2c0",
+      "ordinal": 8,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"02470ed5bb6050e56138\",\"layouts\":[{\"id\":0,\"position\":{\"x\":59.00534347309001,\"y\":0,\"z\":0,\"width\":1151.290306370291,\"height\":655.9198646543493,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"X\":[{\"queryRef\":\"Sum(geo_cordinates_to_county.latitude)\",\"active\":true}],\"Y\":[{\"queryRef\":\"geo_cordinates_to_county.longitude\"}],\"Series\":[{\"queryRef\":\"geo_cordinates_to_county.county_pred\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"g\",\"Entity\":\"geo_cordinates_to_county\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"latitude\"},\"Name\":\"Sum(geo_cordinates_to_county.latitude)\",\"NativeReferenceName\":\"latitude1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"longitude\"},\"Name\":\"geo_cordinates_to_county.longitude\",\"NativeReferenceName\":\"longitude\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"g\"}},\"Property\":\"county\"},\"Name\":\"geo_cordinates_to_county.county_pred\",\"NativeReferenceName\":\"county\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 655.92,
+          "width": 1151.29,
+          "x": 59.01,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filterab465947e8402a014599\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"train\"}},\"Property\":\"is_consumption\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_consumption\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"0L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "ReportSectiond101eed06dd661794982",
+      "ordinal": 6,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"6ed369376b00bce52d09\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.605521030503024,\"y\":0,\"z\":0,\"width\":1100.5182666376322,\"height\":625.7310842727684,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"X\":[{\"queryRef\":\"Sum(train.target)\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(client.installed_capacity)\"}],\"Series\":[{\"queryRef\":\"CountyDim.county\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"client\",\"Type\":0},{\"Name\":\"c1\",\"Entity\":\"CountyDim\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"target\"}},\"Function\":1},\"Name\":\"Sum(train.target)\",\"NativeReferenceName\":\"Average of target\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"installed_capacity\"}},\"Function\":1},\"Name\":\"Sum(client.installed_capacity)\",\"NativeReferenceName\":\"Average of installed_capacity\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"county\"},\"Name\":\"CountyDim.county\",\"NativeReferenceName\":\"county\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"trend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Trend line 1'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 625.73,
+          "width": 1100.52,
+          "x": 9.61,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Radiation on Consumption",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter81a4f7ee3b06d8ea0183\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"train\"}},\"Property\":\"is_consumption\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_consumption\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"1L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "ReportSectiond36726151203d97bc0c5",
+      "ordinal": 5,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"3f86990f14ec74389132\",\"layouts\":[{\"id\":0,\"position\":{\"x\":65,\"y\":36.66666666666667,\"z\":0,\"width\":1215,\"height\":683.3333333333334}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"date_table.MonthYear\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(historical_weather.temperature)\"},{\"queryRef\":\"Avg(historical_weather.diffuse_radiation)\"},{\"queryRef\":\"Avg(historical_weather.direct_solar_radiation)\"},{\"queryRef\":\"Avg(historical_weather.shortwave_radiation)\"},{\"queryRef\":\"Avg(train.target)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_table\",\"Type\":0},{\"Name\":\"h\",\"Entity\":\"historical_weather\",\"Type\":0},{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"MonthYear\"},\"Name\":\"date_table.MonthYear\",\"NativeReferenceName\":\"MonthYear\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"temperature\"}},\"Function\":1},\"Name\":\"Sum(historical_weather.temperature)\",\"NativeReferenceName\":\"Average of temperature\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"diffuse_radiation\"}},\"Function\":1},\"Name\":\"Avg(historical_weather.diffuse_radiation)\",\"NativeReferenceName\":\"Average of diffuse_radiation\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"direct_solar_radiation\"}},\"Function\":1},\"Name\":\"Avg(historical_weather.direct_solar_radiation)\",\"NativeReferenceName\":\"Average of direct_solar_radiation\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"shortwave_radiation\"}},\"Function\":1},\"Name\":\"Avg(historical_weather.shortwave_radiation)\",\"NativeReferenceName\":\"Average of shortwave_radiation\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"target\"}},\"Function\":1},\"Name\":\"Avg(train.target)\",\"NativeReferenceName\":\"Average of target\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"temperature\"}},\"Function\":1}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 683.33,
+          "width": 1215.00,
+          "x": 65.00,
+          "y": 36.67,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Radiation on Production",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter547b38c8c0c8dce1851c\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"train\"}},\"Property\":\"is_consumption\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"is_consumption\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"0L\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+      "height": 720.00,
+      "name": "ReportSectionf164b56bdc0ca05811ad",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"f55d34aa505e145e0a0e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"z\":0,\"width\":1270,\"height\":705,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(train.target)\"},{\"queryRef\":\"Sum(historical_weather.diffuse_radiation)\"},{\"queryRef\":\"Sum(historical_weather.direct_solar_radiation)\"},{\"queryRef\":\"Sum(historical_weather.shortwave_radiation)\"},{\"queryRef\":\"Sum(historical_weather.temperature)\"}],\"Category\":[{\"queryRef\":\"date_table.Date.Variation.Date Hierarchy.Year\",\"active\":true},{\"queryRef\":\"date_table.Date.Variation.Date Hierarchy.Month\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"train\",\"Type\":0},{\"Name\":\"h\",\"Entity\":\"historical_weather\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"date_table\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"target\"}},\"Function\":1},\"Name\":\"Sum(train.target)\",\"NativeReferenceName\":\"Average of target\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"diffuse_radiation\"}},\"Function\":1},\"Name\":\"Sum(historical_weather.diffuse_radiation)\",\"NativeReferenceName\":\"Average of diffuse_radiation\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"direct_solar_radiation\"}},\"Function\":1},\"Name\":\"Sum(historical_weather.direct_solar_radiation)\",\"NativeReferenceName\":\"Average of direct_solar_radiation\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"shortwave_radiation\"}},\"Function\":1},\"Name\":\"Sum(historical_weather.shortwave_radiation)\",\"NativeReferenceName\":\"Average of shortwave_radiation\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"h\"}},\"Property\":\"temperature\"}},\"Function\":1},\"Name\":\"Sum(historical_weather.temperature)\",\"NativeReferenceName\":\"Average of temperature\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"date_table.Date.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"Date Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Date\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"date_table.Date.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"Date Month\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 705.00,
+          "width": 1270.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Large csv files
+data/historical_weather.csv
+data/forecast_weather.csv
